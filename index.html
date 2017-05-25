@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>tree</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="TreeController">
+<div>
+  <div class="col col-2">
+    <div dnd-draggable="templates.input" dnd-effect-allowed="copy">
+      <input-component item="templates.input"/>
+    </div>
+    <div dnd-draggable="templates.select" dnd-effect-allowed="copy">
+      <select-component item="templates.select"/>
+    </div>
+    <div dnd-draggable="templates.tree" dnd-effect-allowed="copy">
+      <tree-component item="templates.tree"/>
+    </div>
+  </div>
+  <tree-component class="col col-9" item="models"></tree-component>
+</div>
+<div>
+<pre>
+{{modelAsJson}}
+</pre>
+</div>
+<!--<tree-component item="models"/>-->
+
+
+<script src="node.js"></script>
+<script src="angular.min.js"></script>
+<script src="angular-drag-and-drop-lists.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

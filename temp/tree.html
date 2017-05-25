@@ -1,0 +1,14 @@
+<div dnd-list="$ctrl.item.children"
+     style-list="$ctrl.item.styleList"
+     class-list="$ctrl.item.classList"
+     custom-style
+>
+  <div
+       ng-repeat="(i, s) in $ctrl.item.children"
+       dnd-moved="$ctrl.item.children.splice(i, 1)"
+       dnd-draggable="s"
+       dnd-effect-allowed="move"
+  >
+    <component-generator item="s"/>
+  </div>
+</div>
