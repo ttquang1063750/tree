@@ -1,7 +1,22 @@
 angular
     .module('app')
     .controller("TreeController", ['$scope', function ($scope) {
-      $scope.selected = {};
+
+      var stacked = {
+        model: "stacked",
+        type: "stacked-component",
+        children: [],
+        properties: {
+          container:{
+            classes: ["flex_column"],
+            styles:[
+              { name: "flex", value: "0 1 100%"},
+              { name: "border", value: "1px dotted #000"},
+              { name: "padding", value: "6px"}
+            ]
+          }
+        }
+      };
 
       $scope.templates = {
         input: {
@@ -36,23 +51,33 @@ angular
             }
           }
         },
-        stacked: {
-          model: "stacked",
-          type: "stacked-component",
-          children: [],
+        stacked: angular.copy(stacked),
+        table: {
+          model: "table",
+          type: "table-component",
+          children: [
+            {
+              children:[angular.copy(stacked), angular.copy(stacked)]
+            },
+            {
+              children:[angular.copy(stacked), angular.copy(stacked)]
+            }
+          ],
           properties: {
             container:{
-              classes: ["flex_column"],
-              styles:[
-                { name: "flex", value: "0 1 100%"},
-                { name: "border", value: "1px dotted #000"},
-                { name: "padding", value: "6px"}
+              classes: [],
+              styles:[]
+            },
+            element:{
+              classes: ["table", "table-bordered"],
+              styles: [
+                { name: "flex", value: "0 1 100%"}
               ]
             }
           }
         }
       };
 
-
-      $scope.models = angular.copy($scope.templates.stacked);
+      $scope.selected = {};
+      $scope.models = angular.copy(stacked);
     }]);
