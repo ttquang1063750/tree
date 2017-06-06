@@ -18,22 +18,9 @@
         </div>
         <div class="panel-body">
           <ul class="list-group">
-            <li class="list-group-item">
-              <div dnd-draggable="templates.input" dnd-effect-allowed="copy">
-                input
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div dnd-draggable="templates.select" dnd-effect-allowed="copy">
-                select
-              </div>
-            </li>
-
-
-            <li class="list-group-item">
-              <div dnd-draggable="templates.stacked" dnd-effect-allowed="copy">
-                tree
+            <li class="list-group-item" ng-repeat="(k, v) in templates">
+              <div dnd-draggable="v" dnd-effect-allowed="copy">
+                {{k}}
               </div>
             </li>
           </ul>
