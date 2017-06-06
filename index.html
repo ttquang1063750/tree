@@ -2,35 +2,71 @@
 <html ng-app="app">
 <head>
   <title>tree</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/libs/angular-bootstrap-colorpicker/css/colorpicker.min.css">
+  <link rel="stylesheet" href="assets/libs/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" href="app.min.css">
 </head>
 
 <body ng-controller="TreeController">
-<div>
-  <div class="col col-2">
-    <div dnd-draggable="templates.input" dnd-effect-allowed="copy">
-      <input-component item="templates.input"/>
+<div class="container-fluid cchai">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          components
+        </div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div dnd-draggable="templates.input" dnd-effect-allowed="copy">
+                input
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div dnd-draggable="templates.select" dnd-effect-allowed="copy">
+                select
+              </div>
+            </li>
+
+
+            <li class="list-group-item">
+              <div dnd-draggable="templates.stacked" dnd-effect-allowed="copy">
+                tree
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel panel-danger" dnd-list="[]">
+        <div class="panel-body">
+          delete
+        </div>
+      </div>
     </div>
-    <div dnd-draggable="templates.select" dnd-effect-allowed="copy">
-      <select-component item="templates.select"/>
+    <div class="col-md-7">
+      <generator
+          item="models"
+          selected="selected"
+      ></generator>
+      <!--<tree-component item="models" selected="selected"></tree-component>-->
     </div>
-    <div dnd-draggable="templates.tree" dnd-effect-allowed="copy">
-      <tree-component item="templates.tree"/>
+    <div class="col-md-3">
+      <properties-component selected="selected"></properties-component>
     </div>
   </div>
-  <tree-component class="col col-9" item="models"></tree-component>
 </div>
-<div>
-<pre>
-{{modelAsJson}}
-</pre>
-</div>
-<!--<tree-component item="models"/>-->
 
 
-<script src="node.js"></script>
-<script src="angular.min.js"></script>
-<script src="angular-drag-and-drop-lists.min.js"></script>
-<script src="app.js"></script>
+<script src="assets/libs/is_js/is.min.js"></script>
+<script src="assets/libs/lodash/dist/lodash.min.js"></script>
+<script src="assets/libs/moment/min/moment-with-locales.min.js"></script>
+<script src="assets/libs/sweetalert/dist/sweetalert.min.js"></script>
+<script src="assets/libs/angular/angular.min.js"></script>
+<script src="assets/libs/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+<script src="assets/libs/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
+<script src="app.min.js"></script>
 </body>
 </html>

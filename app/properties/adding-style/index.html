@@ -1,0 +1,50 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-10">{{header}}</div>
+      <div class="col-md-2 text-right">
+        <button class="btn btn-success btn-xs" ng-click="addNew()">
+          <i class="glyphicon glyphicon-plus-sign"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <tr ng-repeat="style in styles track by $index">
+        <td>
+          <label>
+            <input class="form-control" ng-model="style.name" type="text"/>
+          </label>
+        </td>
+        <td ng-if="checkColor(style.name)">
+          <input ng-if="!checkBackgroundImage(style)" class="form-control" colorpicker type="text" ng-model="style.value"/>
+
+          <div ng-if="checkBackgroundImage(style)">
+            <ui-select ng-model="style.value">
+              <ui-select-match placeholder="Search picture ">
+                <img ng-if="$select.selected.attributes.image.url" ng-src="{{util.loadUrl($select.selected.attributes.image.url)}}" height="30" width="30"/>
+                {{$select.selected.attributes.name}}
+              </ui-select-match>
+              <ui-select-choices repeat="picture in pictures | filter: $select.search"">
+              <img ng-src="{{util.loadUrl(picture.attributes.image.url)}}" height="50px" width="50px"/> &nbsp;
+              <div ng-bind-html="picture.attributes.name| highlight: $select.search" style="display: inline"></div>
+              </ui-select-choices>
+            </ui-select>
+          </div>
+        </td>
+        <td ng-if="!checkColor(style.name)">
+          <input class="form-control" ng-model="style.value" type="text"/>
+        </td>
+        <td>
+          <button class="btn btn-success btn-xs" ng-click="addNew($index)">
+            <i class="glyphicon glyphicon-plus-sign"></i>
+          </button>
+          <button class="btn btn-danger btn-xs" ng-click="remove($index)">
+            <i class="glyphicon glyphicon-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

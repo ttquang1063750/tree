@@ -1,0 +1,29 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-9">{{header}}</div>
+      <div class="col-md-3 text-right">
+        <button class="btn btn-success btn-xs" ng-click="addNew()">
+          <i class="glyphicon glyphicon-plus-sign"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row" ng-repeat="c in classes track by $index">
+      <div class="col-md-9">
+        <label>
+          <select class="form-control" ng-options="flex for flex in flexbox " ng-model="classes[$index]"></select>
+        </label>
+      </div>
+      <div class="col-md-3 text-right">
+        <button class="btn btn-success btn-xs" ng-click="addNew($index)">
+          <i class="glyphicon glyphicon-plus-sign"></i>
+        </button>
+        <button class="btn btn-danger btn-xs" ng-click="remove($index)">
+          <i class="glyphicon glyphicon-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
