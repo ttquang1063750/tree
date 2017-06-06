@@ -10,15 +10,9 @@ angular
           properties: {
             wrapper:{
               classes: [],
-              styles: []
-            },
-            generator:{
-              classes: [],
-              styles: []
-            },
-            component:{
-              classes: [],
-              styles: []
+              styles: [
+                { name: "flex", value: "0 1 100%"}
+              ]
             },
             element:{
               classes: [],
@@ -32,15 +26,9 @@ angular
           properties: {
             wrapper:{
               classes: [],
-              styles: []
-            },
-            generator:{
-              classes: [],
-              styles: []
-            },
-            component:{
-              classes: [],
-              styles: []
+              styles: [
+                { name: "flex", value: "0 1 100%"}
+              ]
             },
             element:{
               classes: [],
@@ -60,14 +48,6 @@ angular
                 { name: "border", value: "1px dotted #000"},
                 { name: "padding", value: "6px"}
               ]
-            },
-            wrapper:{
-              classes: [],
-              styles: []
-            },
-            generator:{
-              classes: [],
-              styles: []
             }
           }
         }

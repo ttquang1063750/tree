@@ -60,7 +60,7 @@
             };
 
           },
-          templateUrl: 'app/properties/adding-style/index.html'
+          templateUrl: 'properties/adding-style/index.html'
         }
       }]);
 })();

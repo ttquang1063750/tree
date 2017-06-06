@@ -54,7 +54,7 @@
                   };
 
                 },
-                templateUrl: 'app/properties/adding-class/index.html'
+                templateUrl: 'properties/adding-class/index.html'
               }
             }]);
 })();

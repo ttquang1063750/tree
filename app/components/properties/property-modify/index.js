@@ -8,6 +8,6 @@
         bindings:{
           selected: "="
         },
-        templateUrl:"app/properties/property-modify/index.html"
+        templateUrl:"properties/property-modify/index.html"
       })
 })();
