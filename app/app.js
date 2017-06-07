@@ -1,6 +1,7 @@
 angular
     .module('app', [
       'colorpicker.module',
+      'ui.bootstrap.contextMenu',
       'dndLists',
       'templates'
     ])

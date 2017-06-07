@@ -64,7 +64,23 @@ angular
             }
           ],
           properties: {
-            container:{
+            wrapper:{
+              classes: [],
+              styles:[]
+            },
+            row_header:{
+              classes: [],
+              styles:[]
+            },
+            column_header:{
+              classes: [],
+              styles:[]
+            },
+            row_body:{
+              classes: [],
+              styles:[]
+            },
+            column_body:{
               classes: [],
               styles:[]
             },

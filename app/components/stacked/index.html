@@ -2,17 +2,18 @@
      class="stacked {{$ctrl.selected == $ctrl.item ? 'selected' : ''}}"
      ng-style="$ctrl.item.properties.container.styles | toObject"
      ng-class="$ctrl.item.properties.container.classes"
-     ng-click="$ctrl.selected = $ctrl.item;"
+     ng-click="$ctrl.selected  = $ctrl.item"
+     dnd-horizontal-list="true"
 >
   <div
-      ng-repeat="(i, item) in $ctrl.item.children"
-      dnd-moved="$ctrl.item.children.splice(i, 1)"
+      ng-repeat="(itemIndex, item) in $ctrl.item.children"
+      dnd-moved="$ctrl.item.children.splice(itemIndex, 1)"
       dnd-draggable="item"
       dnd-effect-allowed="move"
       ng-style="item.properties.wrapper.styles | toObject"
       ng-class="item.properties.wrapper.classes"
       class="stacked {{$ctrl.selected == item ? 'selected' : ''}}"
-      dnd-selected="$ctrl.selected  = item;"
+      dnd-selected="$ctrl.selected  = item"
   >
     <generator
         item="item"
