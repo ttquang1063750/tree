@@ -25,35 +25,25 @@
             }
           };
 
-          var pasteHtml = '<div class="text-success" style="cursor: pointer;margin-left: 5px;">' +
-              '<h4><i class="fa fa fa-clipboard" aria-hidden="true"></i> Paste</h4></div>';
+
           var pasteItem = {
-            html: pasteHtml,
-            enabled: function () {
-              return true
-            },
+            html: '<div class="text-success" style="cursor: pointer;margin-left: 5px;">' +
+            '<h4><i class="fa fa fa-clipboard" aria-hidden="true"></i> Paste</h4></div>',
             click: function () {
-              _.each(componentModifying.saveDB, function (valueArr) {
-                valueArr = angular.copy(valueArr);
-                if (componentModifying.value.type === "stacked") {
-                  componentModifying.value.children[0].children.push(valueArr);
-                } else {
-                  componentModifying.list.push(valueArr);
-                }
-              });
+
             }
           };
 
 
-          var deleteHtml = '<div class="text-danger" style="cursor: pointer;margin-left: 5px;">' +
-              '<h4><i class="fa fa-minus-square" aria-hidden="true"></i> Delete</h4></div>';
+
           var deleteItem = {
-            html: deleteHtml,
+            html: '<div class="text-danger" style="cursor: pointer;margin-left: 5px;">' +
+            '<h4><i class="fa fa-minus-square" aria-hidden="true"></i> Delete</h4></div>',
             enabled: function () {
               return true
             },
             click: function () {
-              componentModifying.list.splice(componentModifying.index, 1);
+
             }
           };
 
@@ -61,21 +51,12 @@
           /*===============================================
            *  Right click options
            * =============================================*/
-          $scope.menuOptions = function (listFromUI, indexFromUI, valueFromUI) {
-
-            // Keep scope list
-            componentModifying.list = listFromUI;
-
-            // Index of item in scope
-            componentModifying.index = indexFromUI;
-
-            // Current item in scope
-            componentModifying.value = valueFromUI;
+          ctrl.menuOptions = function () {
 
             return [
               copyItem,
-              componentModifying.saveDB.length > 0 ? pasteItem : pasteDisableItem,
-              null,
+              pasteItem,
+              pasteDisableItem,
               deleteItem
             ]
           };

@@ -1,14 +1,10 @@
 <table ng-style="$ctrl.item.properties.element.styles | toObject"
        ng-class="$ctrl.item.properties.element.classes">
   <thead>
-  <tr
-      ng-style="$ctrl.item.properties.row_header.styles | toObject"
-      ng-class="$ctrl.item.properties.row_header.classes"
-  >
+  <tr ng-style="$ctrl.item.properties.row_header.styles | toObject">
     <th
         ng-style="$ctrl.item.properties.column_header.styles | toObject"
-        ng-repeat="column in $ctrl.item.children[0].children"
-    >
+        ng-repeat="column in $ctrl.item.children[0].children">
       <generator
           item="column"
           selected="$ctrl.selected"
@@ -17,15 +13,10 @@
   </tr>
   </thead>
   <tbody>
-  <tr
-      ng-style="$ctrl.item.properties.row_body.styles | toObject"
-      ng-class="$ctrl.item.properties.row_body.classes"
-  >
+  <tr ng-style="$ctrl.item.properties.row_body.styles | toObject">
     <td
         ng-style="$ctrl.item.properties.column_body.styles | toObject"
-        ng-class="$ctrl.item.properties.column_body.classes"
-        ng-repeat="column in $ctrl.item.children[1].children"
-    >
+        ng-repeat="column in $ctrl.item.children[1].children">
       <generator
           item="column"
           selected="$ctrl.selected"
