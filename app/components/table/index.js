@@ -1,8 +1,7 @@
 (function () {
   angular
       .module('app')
-      .component('tableComponent', {
-        bindings: {item: '=', selected:'='},
+      .directive('tableComponent', {
         templateUrl: 'table/index.html'
       })
 })();

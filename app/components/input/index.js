@@ -1,8 +1,7 @@
 (function () {
   angular
       .module('app')
-      .component('inputComponent', {
-        bindings: {item: '='},
+      .directive('inputComponent', {
         templateUrl: 'input/index.html'
       })
 })();

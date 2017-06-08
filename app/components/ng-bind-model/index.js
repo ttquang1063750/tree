@@ -2,8 +2,8 @@
   angular
       .module('app')
       .directive('ngBindModel', [
-        '$compile', '$rootScope', '$parse',
-        function ($compile, $rootScope, $parse) {
+        '$compile',
+        function ($compile) {
           return {
             restrict:"AC",
 
@@ -14,7 +14,7 @@
               var tagType = el[0].type ? el[0].type.toLowerCase() : "unknown";
               var index = attr.index ? attr.index : "i";
               var alias = attr.alias ? attr.alias : "item";
-              var scopeModel = $rootScope.currentScope.$eval($parse(stringModel)(scope));
+              var scopeModel = scope.$eval(stringModel);
 
               if (scopeModel !== undefined) {
 

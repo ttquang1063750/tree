@@ -1,7 +1,7 @@
 angular
     .module('app')
-    .controller("TreeController", ['$scope', '$rootScope', function ($scope, $rootScope) {
-      $rootScope.currentScope = $scope;
+    .controller("TreeController", ['$scope', function ($scope) {
+
       var stacked = {
         model: "stacked",
         type: "stacked-component",
@@ -118,7 +118,13 @@ angular
         table: angular.copy(table)
       };
 
-      $scope.test = "djjfjf";
+      $scope.userList = [
+        {name: "xxx", age:10},
+        {name: "yyy", age:20},
+        {name: "zzz", age:30},
+        {name: "www", age:40}
+      ];
       $scope.selected = {};
       $scope.models = node;
+
     }]);

@@ -1,23 +1,20 @@
-<div dnd-list="$ctrl.item.children"
-     class="stacked {{$ctrl.selected == $ctrl.item ? 'selected' : ''}}"
-     ng-style="$ctrl.item.properties.container.styles | toObject"
-     ng-class="$ctrl.item.properties.container.classes"
-     ng-click="$ctrl.selected  = $ctrl.item"
+<div dnd-list="item.children"
+     class="stacked {{selected == item ? 'selected' : ''}}"
+     ng-style="item.properties.container.styles | toObject"
+     ng-class="item.properties.container.classes"
+     ng-click="selected  = item"
      dnd-horizontal-list="true"
 >
   <div
-      ng-repeat="(itemIndex, item) in $ctrl.item.children"
-      dnd-moved="$ctrl.item.children.splice(itemIndex, 1)"
+      ng-repeat="(itemIndex, item) in item.children"
+      dnd-moved="item.children.splice(itemIndex, 1)"
       dnd-draggable="item"
       dnd-effect-allowed="move"
       ng-style="item.properties.wrapper.styles | toObject"
       ng-class="item.properties.wrapper.classes"
-      class="stacked {{$ctrl.selected == item ? 'selected' : ''}}"
-      dnd-selected="$ctrl.selected  = item"
+      class="stacked {{selected == item ? 'selected' : ''}}"
+      dnd-selected="selected  = item"
   >
-    <generator
-        item="item"
-        selected="$ctrl.selected"
-    ></generator>
+    <generator></generator>
   </div>
 </div>

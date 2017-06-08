@@ -1,8 +1,7 @@
 (function () {
   angular
       .module('app')
-      .component('paragraphComponent', {
-        bindings: {item: '='},
+      .directive('paragraphComponent', {
         templateUrl: 'paragraph/index.html'
       })
 })();

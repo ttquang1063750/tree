@@ -1,12 +1,9 @@
 (function () {
   angular
       .module('app')
-      .component('stackedComponent', {
-        bindings: {item: '=', selected:"="},
+      .directive('stackedComponent', {
         templateUrl: 'stacked/index.html',
-        controller: function () {
-          var ctrl = this;
-
+        controller: ['$scope', function ($scope) {
 
           var copyItem = {
             html: '<div class="text-info" style="cursor: pointer;margin-left: 5px;">' +
@@ -51,7 +48,7 @@
           /*===============================================
            *  Right click options
            * =============================================*/
-          ctrl.menuOptions = function () {
+          $scope.menuOptions = function () {
 
             return [
               copyItem,
@@ -60,6 +57,6 @@
               deleteItem
             ]
           };
-        }
+        }]
       })
 })();

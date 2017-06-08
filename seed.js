@@ -3,7 +3,7 @@ var node = {
   "type": "stacked-component",
   "children": [
     {
-      "model": "table",
+      "model": "userList",
       "type": "table-component",
       "children": [
         {
@@ -14,7 +14,7 @@ var node = {
               "children": [
                 {
                   "type": "paragraph-component",
-                  "model": "test",
+                  "model": "Name",
                   "properties": {
                     "wrapper": {
                       "classes": [],
@@ -60,7 +60,7 @@ var node = {
               "children": [
                 {
                   "type": "paragraph-component",
-                  "model": "1",
+                  "model": "Age",
                   "properties": {
                     "wrapper": {
                       "classes": [],
@@ -110,7 +110,7 @@ var node = {
               "children": [
                 {
                   "type": "paragraph-component",
-                  "model": "1",
+                  "model": "userList[table_body_column_index].name",
                   "properties": {
                     "wrapper": {
                       "classes": [],
@@ -156,7 +156,7 @@ var node = {
               "children": [
                 {
                   "type": "paragraph-component",
-                  "model": "1",
+                  "model": "userList[table_body_column_index].age",
                   "properties": {
                     "wrapper": {
                       "classes": [],
@@ -225,6 +225,10 @@ var node = {
             {
               "name": "flex",
               "value": "0 1 100%"
+            },
+            {
+              "name": "margin",
+              "value": "0"
             }
           ]
         }
