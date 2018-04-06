@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "compiler": "npm install && bower install",
-    "watch": "gulp watch",
-    "build": "gulp"
+    "install": "npm install && bower install",
+    "dev:watch": "gulp watch",
+    "dev:build": "gulp"
   },
   "author": "",
   "license": "ISC",
