@@ -23,6 +23,8 @@
 
 //for design page
 .stacked{
+  padding: 5px;
+  border:1px dotted #999;
   display: flex; //Default
   flex-wrap: nowrap; //Default
   flex-direction: column; //Default

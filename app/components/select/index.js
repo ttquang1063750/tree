@@ -1,7 +1,13 @@
 (function () {
   angular
       .module('app')
-      .directive('selectComponent', {
-        templateUrl: 'select/index.html'
-      })
+      .directive('selectComponent', [function () {
+        return {
+          scope: {
+            item:"="
+          },
+          replace: true,
+          templateUrl: 'select/index.html'
+        };
+      }]);
 })();

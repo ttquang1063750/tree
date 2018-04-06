@@ -11,6 +11,11 @@
 <body ng-controller="TreeController">
 <div class="container-fluid cchai">
   <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success" ng-click="show()">{{isShow ? 'HIDE' : 'SHOW'}}</button>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-2">
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -34,8 +39,7 @@
       </div>
     </div>
     <div class="col-md-7">
-      <generator item="models"></generator>
-      <!--<tree-component item="models" selected="selected"></tree-component>-->
+      <root item="models"></root>
     </div>
     <div class="col-md-3">
       <properties-component selected="selected"></properties-component>
@@ -52,6 +56,8 @@
 
 
 <script src="assets/libs/is_js/is.min.js"></script>
+<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+<!--<script src="assets/libs/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>-->
 <script src="assets/libs/lodash/dist/lodash.min.js"></script>
 <script src="assets/libs/moment/min/moment-with-locales.min.js"></script>
 <script src="assets/libs/sweetalert/dist/sweetalert.min.js"></script>
@@ -59,6 +65,7 @@
 <script src="assets/libs/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
 <script src="assets/libs/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.min.js"></script>
 <script src="assets/libs/angular-bootstrap-contextmenu/contextMenu.js"></script>
+<!--<script src="assets/libs/angular-dragdrop/src/angular-dragdrop.min.js"></script>-->
 <script src="seed.js"></script>
 <script src="app.min.js"></script>
 </body>

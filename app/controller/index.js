@@ -1,81 +1,35 @@
 angular
     .module('app')
-    .controller("TreeController", ['$scope', function ($scope) {
+    .controller("TreeController", ['$scope', '$rootScope', 'appService', function ($scope, $rootScope, appService) {
 
       var stacked = {
         model: "stacked",
-        type: "stacked-component",
-        children: [],
-        properties: {
-          container:{
-            classes: ["flex_column"],
-            styles:[
-              { name: "flex", value: "0 1 100%"},
-              { name: "border", value: "1px dotted #000"},
-              { name: "padding", value: "6px"}
-            ]
-          }
-        }
+        type: "stacked",
+        children: []
       };
 
 
       var input = {
-        model: "",
-        type: "input-component",
-        properties: {
-          wrapper:{
-            classes: [],
-            styles: [
-              { name: "flex", value: "0 1 100%"}
-            ]
-          },
-          element:{
-            classes: [],
-            styles: []
-          }
-        }
+        model: "d",
+        type: "input"
       };
 
 
       var select = {
-        type: "select-component",
-        model: "1",
-        properties: {
-          wrapper:{
-            classes: [],
-            styles: [
-              { name: "flex", value: "0 1 100%"}
-            ]
-          },
-          element:{
-            classes: [],
-            styles: []
-          }
-        }
+        type: "select",
+        model: "1"
       };
 
 
       var paragraph = {
-        type: "paragraph-component",
-        model: "1",
-        properties: {
-          wrapper:{
-            classes: [],
-            styles: [
-              { name: "flex", value: "0 1 100%"}
-            ]
-          },
-          element:{
-            classes: [],
-            styles: []
-          }
-        }
+        type: "paragraph",
+        model: "1"
       };
 
 
       var table= {
         model: "table",
-        type: "table-component",
+        type: "table",
         children: [
           {
             children:[angular.copy(stacked), angular.copy(stacked)]
@@ -83,33 +37,10 @@ angular
           {
             children:[angular.copy(stacked), angular.copy(stacked)]
           }
-        ],
-        properties: {
-          wrapper:{
-            classes: [],
-            styles:[]
-          },
-          row_header:{
-            styles:[]
-          },
-          column_header:{
-            styles:[]
-          },
-          row_body:{
-            styles:[]
-          },
-          column_body:{
-            styles:[]
-          },
-          element:{
-            classes: ["table", "table-bordered"],
-            styles: [
-              { name: "flex", value: "0 1 100%"}
-            ]
-          }
-        }
+        ]
       };
 
+      $scope.isShow = appService.isShow;
       $scope.templates = {
         input: angular.copy(input),
         select: angular.copy(select),
@@ -126,5 +57,10 @@ angular
       ];
       $scope.selected = {};
       $scope.models = node;
+
+      $scope.show = function () {
+        appService.isShow = $scope.isShow = !$scope.isShow;
+        $rootScope.$broadcast('$re-compile');
+      }
 
     }]);

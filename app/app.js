@@ -9,4 +9,9 @@ angular
       '$rootScopeProvider',
       function ($rootScopeProvider) {
         $rootScopeProvider.digestTtl(1000);
-      }]);
+      }])
+      .factory('appService', function () {
+        return {
+          isShow: true
+        }
+      });

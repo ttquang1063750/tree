@@ -1,7 +1,13 @@
 (function () {
   angular
       .module('app')
-      .directive('paragraphComponent', {
-        templateUrl: 'paragraph/index.html'
-      })
+      .directive('paragraphComponent', [function () {
+        return {
+          scope: {
+            item:"="
+          },
+          replace: true,
+          template: '<p>{{item.model}}</p>'
+        };
+      }]);
 })();

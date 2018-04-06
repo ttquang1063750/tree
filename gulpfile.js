@@ -36,7 +36,7 @@ gulp.task("template", function () {
 gulp.task("script", ['template'], function () {
   gulp
       .src(scriptDirectories)
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(concat('app.min.js'))
       .pipe(gulp.dest(destinationDirectories))
       .on('end', function () {
