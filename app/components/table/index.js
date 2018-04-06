@@ -1,8 +1,13 @@
 (function () {
   angular
       .module('app')
-      .component('tableComponent', {
-        bindings: {item: '=', selected:'='},
-        templateUrl: 'table/index.html'
-      })
+      .directive('tableComponent', [function () {
+        return {
+          scope: {
+            item:"="
+          },
+          replace: true,
+          templateUrl: 'table/index.html'
+        };
+      }]);
 })();

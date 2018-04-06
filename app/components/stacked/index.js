@@ -1,8 +1,13 @@
 (function () {
   angular
       .module('app')
-      .component('stackedComponent', {
-        bindings: {item: '=', selected:"="},
-        templateUrl: 'stacked/index.html'
-      })
+      .directive('stackedComponent', [function () {
+        return {
+          scope: {
+            item:"="
+          },
+          replace: true,
+          templateUrl: 'stacked/index.html'
+        };
+      }]);
 })();

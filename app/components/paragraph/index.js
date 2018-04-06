@@ -1,13 +1,13 @@
 (function () {
   angular
       .module('app')
-      .directive('selectComponent', [function () {
+      .directive('paragraphComponent', [function () {
         return {
           scope: {
             item:"="
           },
           replace: true,
-          templateUrl: 'select/index.html'
+          template: '<p>{{item.model}}</p>'
         };
       }]);
 })();
